@@ -1,7 +1,10 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} **/
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
   transform: {
-    "^.+\.tsx?$": ["ts-jest",{}],
+    "^.+\\.tsx?$": ["ts-jest", {}],
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  roots: ['<rootDir>/src'],
+  testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
 };
